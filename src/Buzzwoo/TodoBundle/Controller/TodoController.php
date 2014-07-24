@@ -11,11 +11,13 @@ class TodoController extends Controller
 {
 	public function indexAction()
 	{
-		$tasks = $this->getDoctrine()
-			->getRepository('BuzzwooTodoBundle:Task')
-			->findAll();
+		$repository = $this->getDoctrine()->getRepository('BuzzwooTodoBundle:Task');
+		$unfinishedTasks = $repository->findByCompleted(0);
+		$finishedTasks = $repository->findByCompleted(1);
+
 		return $this->render('BuzzwooTodoBundle:Todo:index.html.twig',
-			['tasks' => $tasks]);
+			['unfinished' => $unfinishedTasks,
+			'finished' => $finishedTasks]);
 	}
 
 	public function createAction(Request $request)

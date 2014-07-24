@@ -2,8 +2,17 @@
 
 {% block content %}
 	<a href="{{ path('create_task') }}">New</a>
+
+	<h2>To-do</h2>
 	<ul>
-	{% for task in tasks %}
+	{% for task in unfinished %}
+		<li>{{ task.name }}</li>
+	{% endfor %}
+	</ul>
+
+	<h3>Finished</h3>
+	<ul>
+	{% for task in finished %}
 		<li>{{ task.name }}</li>
 	{% endfor %}
 	</ul>
