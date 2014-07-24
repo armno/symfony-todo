@@ -2,14 +2,16 @@
 
 namespace Acme\HelloBundle\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class HelloController
+class HelloController extends Controller
 {
 	public function indexAction($name)
 	{
-		$html = 'Hello ' . $name;
-		return new Response($html);
+		return $this->render(
+			'AcmeHelloBundle:Hello:index.html.twig',
+			['name' => $name]
+		);
 	}
 }
 
