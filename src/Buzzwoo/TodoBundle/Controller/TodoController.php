@@ -10,16 +10,9 @@ class TodoController extends Controller
 {
 	public function indexAction()
 	{
-		$tasks = [
-			[
-				'id' => 1,
-				'name' => 'Buy some milke'
-			],
-			[
-				'id' => 2,
-				'name' => 'Take some photos'
-			]
-		];
+		$tasks = $this->getDoctrine()
+			->getRepository('BuzzwooTodoBundle:Task')
+			->findAll();
 		return $this->render('BuzzwooTodoBundle:Todo:index.html.twig',
 			['tasks' => $tasks]);
 	}
