@@ -6,4 +6,4 @@ home:
 create_task:
   path: /tasks/create
   defaults: { _controller: BuzzwooTodoBundle:Todo:create }
-  methods: [GET]
+  methods: [GET, POST]

@@ -2,6 +2,7 @@
 
 namespace Buzzwoo\TodoBundle\Controller;
 
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Buzzwoo\TodoBundle\Entity\Task;
@@ -17,8 +18,25 @@ class TodoController extends Controller
 			['tasks' => $tasks]);
 	}
 
-	public function createAction()
+	public function createAction(Request $request)
 	{
-		return $this->render('BuzzwooTodoBundle:Todo:create.html.twig');
+		$task = new Task();
+		$task->setCompleted(0);
+		$form = $this->createFormBuilder($task)
+			->add('name', 'text')
+			->add('save', 'submit')
+			->getForm();
+
+		$form->handleRequest($request);
+
+		if ($form->isValid())
+		{
+			return $this->redirect($this->generateUrl('home'));
+		}
+
+		return $this->render(
+			'BuzzwooTodoBundle:Todo:create.html.twig',
+			['form' => $form->createView()
+		]);
 	}
 }

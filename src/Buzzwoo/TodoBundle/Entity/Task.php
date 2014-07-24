@@ -3,6 +3,7 @@
 namespace Buzzwoo\TodoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -60,5 +61,16 @@ class Task
     {
         return $this->name;
     }
+
+		public function setCompleted($completed)
+		{
+			$this->completed = $completed;
+			return $this;
+		}
+
+		public function getCompleted()
+		{
+			return $this->completed;
+		}
 
 }
