@@ -1,0 +1,7 @@
+parameters:
+#    buzzwoo_todo.example.class: Buzzwoo\TodoBundle\Example
+
+services:
+#    buzzwoo_todo.example:
+#        class: %buzzwoo_todo.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,3 +1,0 @@
-buzzwoo_yo_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: BuzzwooYoBundle:Default:index }

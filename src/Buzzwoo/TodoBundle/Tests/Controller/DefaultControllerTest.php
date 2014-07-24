@@ -1,6 +1,6 @@
 <?php
 
-namespace Buzzwoo\YoBundle\Tests\Controller;
+namespace Buzzwoo\TodoBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
