@@ -1,7 +1,9 @@
 home:
   path:     /
   defaults: { _controller: BuzzwooTodoBundle:Todo:index }
+  methods: [GET]
 
 create_task:
   path: /tasks/create
   defaults: { _controller: BuzzwooTodoBundle:Todo:create }
+  methods: [GET]

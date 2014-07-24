@@ -12,21 +12,26 @@ class Task
 {
 
 	/**
-	 * @ORM\Column(type="integer")
-	 * @ORM\id
-	 * @ORM\GeneratedValue(strategy="AUTO")
-	 */
+	* @ORM\Column(type="integer")
+	* @ORM\id
+	* @ORM\GeneratedValue(strategy="AUTO")
+	*/
 	protected $id;
 
 	/**
-	 * @ORM\Column(type="string", length=255)
-	 */
+	* @ORM\Column(type="string", length=255)
+	*/
 	protected $name;
+
+	/**
+	* @ORM\Column(type="boolean")
+	*/
+	protected $completed;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -49,10 +54,11 @@ class Task
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
         return $this->name;
     }
+
 }

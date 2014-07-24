@@ -19,13 +19,6 @@ class TodoController extends Controller
 
 	public function createAction()
 	{
-		$task = new Task();
-		$task->setName('Buy some milk');
-
-		$em = $this->getDoctrine()->getManager();
-		$em->persist($task);
-		$em->flush();
-
-		return new Response('Create task id ' . $task->getId());
+		return $this->render('BuzzwooTodoBundle:Todo:create.html.twig');
 	}
 }
