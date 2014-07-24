@@ -31,6 +31,7 @@ class TodoController extends Controller
 
 		if ($form->isValid())
 		{
+			// save new todo item into the database
 			return $this->redirect($this->generateUrl('home'));
 		}
 
