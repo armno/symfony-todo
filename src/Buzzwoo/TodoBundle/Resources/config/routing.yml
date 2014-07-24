@@ -7,3 +7,8 @@ create_task:
   path: /tasks/create
   defaults: { _controller: BuzzwooTodoBundle:Todo:create }
   methods: [GET, POST]
+
+update_task:
+  path: /tasks/update/{id}
+  defaults: { _controller: BuzzwooTodoBundle:Todo:update }
+  methods: [GET]

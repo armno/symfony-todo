@@ -6,7 +6,10 @@
 	<h2>To-do</h2>
 	<ul>
 	{% for task in unfinished %}
-		<li>{{ task.name }}</li>
+		<li>
+			<span class="task-name">{{ task.name }}</span>
+			<a href="{{ path('update_task', {'id': task.id })}} ">done</a>
+		</li>
 	{% endfor %}
 	</ul>
 

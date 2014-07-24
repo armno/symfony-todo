@@ -46,4 +46,19 @@ class TodoController extends Controller
 			['form' => $form->createView()
 		]);
 	}
+
+	public function updateAction($id)
+	{
+		$em = $this->getDoctrine()->getManager();
+		$task = $em->getRepository('BuzzwooTodoBundle:Task')->find($id);
+		if (!$task)
+		{
+			throw $this->createNotFoundException(
+				'No tasks found'
+			);
+		}
+		$task->setCompleted(1);
+		$em->flush();
+		return $this->redirect($this->generateUrl('home'));
+	}
 }
