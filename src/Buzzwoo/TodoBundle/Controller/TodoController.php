@@ -61,4 +61,19 @@ class TodoController extends Controller
 		$em->flush();
 		return $this->redirect($this->generateUrl('home'));
 	}
+
+	public function deleteAction($id)
+	{
+		$em = $this->getDoctrine()->getManager();
+		$task = $em->getRepository('BuzzwooTodoBundle:Task')->find($id);
+		if (!$task)
+		{
+			throw $this->createNotFoundException(
+				'No tasks found'
+			);
+		}
+		$em->remove($task);
+		$em->flush();
+		return $this->redirect($this->generateUrl('home'));
+	}
 }

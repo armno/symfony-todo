@@ -12,3 +12,8 @@ update_task:
   path: /tasks/update/{id}
   defaults: { _controller: BuzzwooTodoBundle:Todo:update }
   methods: [GET]
+
+delete_task:
+  path: /tasks/delete/{id}
+  defaults: { _controller: BuzzwooTodoBundle:Todo:delete }
+  methods: [GET]
