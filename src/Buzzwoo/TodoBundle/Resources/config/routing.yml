@@ -1,3 +1,7 @@
 home:
-    path:     /
-    defaults: { _controller: BuzzwooTodoBundle:Todo:index }
+  path:     /
+  defaults: { _controller: BuzzwooTodoBundle:Todo:index }
+
+create_task:
+  path: /tasks/create
+  defaults: { _controller: BuzzwooTodoBundle:Todo:create }
