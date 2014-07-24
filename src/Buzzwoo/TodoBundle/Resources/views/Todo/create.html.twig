@@ -1,7 +1,7 @@
 {% extends '::layout.html.twig' %}
 
 {% block content %}
-
+<a href="{{ path('home') }}">back</a>
 <h2>New To-do</h2>
 {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 	{{ form_errors(form) }}

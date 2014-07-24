@@ -32,6 +32,10 @@ class TodoController extends Controller
 		if ($form->isValid())
 		{
 			// save new todo item into the database
+			$em = $this->getDoctrine()->getManager();
+			$em->persist($task);
+			$em->flush();
+
 			return $this->redirect($this->generateUrl('home'));
 		}
 

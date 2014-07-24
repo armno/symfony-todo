@@ -1,6 +1,7 @@
 {% extends '::layout.html.twig' %}
 
 {% block content %}
+	<a href="{{ path('create_task') }}">New</a>
 	<ul>
 	{% for task in tasks %}
 		<li>{{ task.name }}</li>
