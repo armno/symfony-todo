@@ -1,1 +1,10 @@
-This is the index page!
+{% extends '::layout.html.twig' %}
+
+{% block content %}
+	<ul>
+	{% for task in tasks %}
+		<li>{{ task.name }}</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
+
