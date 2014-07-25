@@ -59,6 +59,7 @@ class TodoController extends Controller
 			);
 		}
 		$task->setCompleted(1);
+		$task->setUpdatedAt(new \DateTime('now'));
 		$em->flush();
 		return $this->redirect($this->generateUrl('home'));
 	}

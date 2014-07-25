@@ -35,6 +35,10 @@ class Task
 	*/
 	protected $createdAt;
 
+	/**
+	* @ORM\Column(type="datetime", name="updated_at")
+	*/
+	protected $updatedAt;
     /**
      * Get id
      *
@@ -90,4 +94,14 @@ class Task
 			return $this->createdAt;
 		}
 
+		public function setUpdatedAt($updatedAt)
+		{
+			$this->updatedAt = $updatedAt;
+			return $this;
+		}
+
+		public function getUpdatedAt()
+		{
+			return $this->updatedAt;
+		}
 }
