@@ -34,6 +34,7 @@ class TodoController extends Controller
 		if ($form->isValid())
 		{
 			// save new todo item into the database
+			$task->setCreatedAt(new \DateTime('now'));
 			$em = $this->getDoctrine()->getManager();
 			$em->persist($task);
 			$em->flush();

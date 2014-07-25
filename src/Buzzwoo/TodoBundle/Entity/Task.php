@@ -30,6 +30,11 @@ class Task
 	*/
 	protected $completed;
 
+	/**
+	* @ORM\Column(type="datetime", name="created_at")
+	*/
+	protected $createdAt;
+
     /**
      * Get id
      *
@@ -72,6 +77,17 @@ class Task
 		public function getCompleted()
 		{
 			return $this->completed;
+		}
+
+		public function setCreatedAt($createdAt)
+		{
+			$this->createdAt = $createdAt;
+			return $this;
+		}
+
+		public function getCreatedAt()
+		{
+			return $this->createdAt;
 		}
 
 }
