@@ -1,0 +1,52 @@
+body {
+	width: 600px;
+	margin: auto;
+	font-family: sans-serif;
+	color: #444;
+}
+a {
+	color: #2980b9;
+	text-decoration: none;
+}
+form {
+	display: inline;
+}
+.pure-button {
+	color: white;
+}
+.pure-button-primary {
+	background: #3498db;
+}
+.button-success {
+	background: #1abc9c;
+}
+.button-danger {
+	background: #e74c3c;
+}
+
+.tasks {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+}
+
+.tasks li {
+	margin: 10px 0;
+	border-bottom: 1px solid #ecf0f1;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.task-name {
+	display: inline-block;
+	min-width: 300px;
+}
+
+.finished {
+	font-style: italic;
+}
+
+.finished a {
+	color: gray;
+}

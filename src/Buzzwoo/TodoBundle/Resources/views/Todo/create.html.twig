@@ -3,7 +3,7 @@
 {% block content %}
 <a href="{{ path('home') }}">back</a>
 <h2>New To-do</h2>
-{{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+{{ form_start(form, {'attr': {'novalidate': 'novalidate', 'class' : 'pure-form'}}) }}
 	{{ form_errors(form) }}
 	{{ form_row(form.name) }}
 {{ form_end(form) }}

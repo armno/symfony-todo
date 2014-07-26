@@ -1,21 +1,21 @@
 {% extends '::layout.html.twig' %}
 
 {% block content %}
-	<a href="{{ path('create_task') }}">New</a>
+	<a class="pure-button pure-button-primary" href="{{ path('create_task') }}">New</a>
 
 	<h2>To-do</h2>
-	<ul>
+	<ul class="tasks">
 	{% for task in unfinished %}
 		<li>
 			<span class="task-name">{{ task.name }}</span>
-			<a href="{{ path('update_task', {'id': task.id })}} ">done</a>
-			<a href="{{ path('delete_task', {'id': task.id })}} ">delete</a>
+			<a class="pure-button button-success" href="{{ path('update_task', {'id': task.id })}} ">done</a>
+			<a class="pure-button button-danger" href="{{ path('delete_task', {'id': task.id })}} ">delete</a>
 		</li>
 	{% endfor %}
 	</ul>
 
 	<h3>Finished</h3>
-	<ul>
+	<ul class="tasks finished">
 	{% for task in finished %}
 		<li>{{ task.name }}</li>
 	{% endfor %}
