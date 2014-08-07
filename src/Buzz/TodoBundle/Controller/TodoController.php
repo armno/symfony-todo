@@ -1,21 +1,21 @@
 <?php
 
-namespace Buzzwoo\TodoBundle\Controller;
+namespace Buzz\TodoBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Buzzwoo\TodoBundle\Entity\Task;
+use Buzz\TodoBundle\Entity\Task;
 
 class TodoController extends Controller
 {
 	public function indexAction()
 	{
-		$repository = $this->getDoctrine()->getRepository('BuzzwooTodoBundle:Task');
+		$repository = $this->getDoctrine()->getRepository('BuzzTodoBundle:Task');
 		$unfinishedTasks = $repository->findByCompleted(0);
 		$finishedTasks = $repository->findByCompleted(1);
 
-		return $this->render('BuzzwooTodoBundle:Todo:index.html.twig',
+		return $this->render('BuzzTodoBundle:Todo:index.html.twig',
 			['unfinished' => $unfinishedTasks,
 			'finished' => $finishedTasks]);
 	}
@@ -43,7 +43,7 @@ class TodoController extends Controller
 		}
 
 		return $this->render(
-			'BuzzwooTodoBundle:Todo:create.html.twig',
+			'BuzzTodoBundle:Todo:create.html.twig',
 			['form' => $form->createView()
 		]);
 	}
@@ -51,7 +51,7 @@ class TodoController extends Controller
 	public function updateAction($id)
 	{
 		$em = $this->getDoctrine()->getManager();
-		$task = $em->getRepository('BuzzwooTodoBundle:Task')->find($id);
+		$task = $em->getRepository('BuzzTodoBundle:Task')->find($id);
 		if (!$task)
 		{
 			throw $this->createNotFoundException(
@@ -67,7 +67,7 @@ class TodoController extends Controller
 	public function deleteAction($id)
 	{
 		$em = $this->getDoctrine()->getManager();
-		$task = $em->getRepository('BuzzwooTodoBundle:Task')->find($id);
+		$task = $em->getRepository('BuzzTodoBundle:Task')->find($id);
 		if (!$task)
 		{
 			throw $this->createNotFoundException(

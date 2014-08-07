@@ -1,0 +1,19 @@
+home:
+  path:     /
+  defaults: { _controller: BuzzTodoBundle:Todo:index }
+  methods: [GET]
+
+create_task:
+  path: /tasks/create
+  defaults: { _controller: BuzzTodoBundle:Todo:create }
+  methods: [GET, POST]
+
+update_task:
+  path: /tasks/update/{id}
+  defaults: { _controller: BuzzTodoBundle:Todo:update }
+  methods: [GET]
+
+delete_task:
+  path: /tasks/delete/{id}
+  defaults: { _controller: BuzzTodoBundle:Todo:delete }
+  methods: [GET]

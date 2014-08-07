@@ -1,6 +1,6 @@
 <?php
 
-namespace Buzzwoo\TodoBundle\DependencyInjection;
+namespace Buzz\TodoBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
