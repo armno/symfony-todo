@@ -3,11 +3,11 @@
 {% block content %}
 	<a class="pure-button pure-button-primary" href="{{ path('create_task') }}">New</a>
 
-	<h2>To-do</h2>
+	<h2>To do</h2>
 	<ul class="tasks">
 	{% for task in unfinished %}
 		<li>
-			<span class="task-name">{{ task.name }}</span>
+			<span class="task-name"><a href="#">{{ task.name }}</a></span>
 			<a class="pure-button button-success" href="{{ path('update_task', {'id': task.id })}} ">done</a>
 			<a class="pure-button button-danger" href="{{ path('delete_task', {'id': task.id })}} ">delete</a>
 		</li>
@@ -17,7 +17,8 @@
 	<h3>Finished</h3>
 	<ul class="tasks finished">
 	{% for task in finished %}
-		<li>{{ task.name }}</li>
+		<li>
+			<a href="#">{{ task.name }}</a></li>
 	{% endfor %}
 	</ul>
 {% endblock %}
